@@ -1,8 +1,19 @@
 <!DOCTYPE html>
+<html>
 <head>
-    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/screenGame/styles.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <title>English Challenge</title>
 </head>
 <body>
-    <h1>Hello</h1>
+    <a class="botao" href="../home/index.html">X</a>
+    <form action="/game/{{questionRandom}}" method="post" class="containerText">
+        <h1 id="texto">Translate "{{question.palavra}}"</h1>
+        <input id="input" type="text" name="traducao" placeholder="Digite a tradução da palavra entre aspas">
+        <button class="botaoEnviar">
+            <img id="setinha" src="{{url_for('static', filename='imgs/setinha.png')}}" alt="Setinha">
+        </button>
+    </form>
 </body>
 </html>
