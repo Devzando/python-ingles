@@ -17,7 +17,7 @@ def noRepeatQuestion():
         while questionRandom in listNums:
             questionRandom = random.randint(0, 5)
     else:
-        return 'teste'
+        return 'fim'
 
     valoresBdAdd.write(str(questionRandom)+'\n')
 
@@ -25,3 +25,10 @@ def noRepeatQuestion():
     valoresBdAdd.close()
 
     return questionRandom
+
+def clearQuestion():
+    questionFile = open('models/valoresBd.txt', 'w')
+
+    questionFile.write('')
+
+    questionFile.close()

@@ -34,7 +34,6 @@ body {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    margin-right: -72vw;
     margin-top: -4vh;
     font-size: 35px;
     color: #fff;
@@ -56,4 +55,12 @@ body {
     position:relative;
     top:8px;
     box-shadow:none;
+}
+
+#container-links{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row-reverse;
 }

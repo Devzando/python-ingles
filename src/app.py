@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import json
 
 import helpers.noRepeatQuestion as helpers
+import helpers.scoreCalculate as scoreCalculate
 
 app = Flask(__name__)
 
@@ -31,14 +32,34 @@ def telajogo(id):
         if questionVerify['traducao'] == formValue:
             newQuestionRandom = helpers.noRepeatQuestion()
 
-            newQuestion = jsonObj[newQuestionRandom]
+            scoreCalculate.uniqueScoreCalculate()
+            if newQuestionRandom == 'fim':
+                noQuestion = True
+
+                score = scoreCalculate.scoreEndGame()
+                scoreCalculate.clearScore()
+                helpers.clearQuestion()
+
+                return render_template('endGame/index.html', score = score, noQuestion = noQuestion)
+            else:
+                newQuestion = jsonObj[newQuestionRandom]
+
+                bd.close()
+                return render_template('screenGame/index.html', question = newQuestion, questionRandom = newQuestionRandom)
+        else:
+            score = scoreCalculate.scoreEndGame()
+            scoreCalculate.clearScore()
+            helpers.clearQuestion()
 
             bd.close()
-            return render_template('screenGame/index.html', question = newQuestion, questionRandom = newQuestionRandom)
-        else:
-            bd.close()
-            return 'teste'
+            return render_template('endGame/index.html', score = score)
         
+@app.route('/scoreall')
+def scoreAllScreen():
+    scoreAll = scoreCalculate.scoreAll()
+
+    return render_template('scoreAll/index.html', scoreAll = scoreAll)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

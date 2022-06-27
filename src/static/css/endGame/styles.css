@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("../../imgs/fundo3.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+
+.containerText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Fredericka the Great';
+    color: #fff;
+}
+
+#textoResult {
+    font-size: 4vw;
+    font-weight: 200;
+    margin-top: 17vh;
+    margin-bottom: 0;
+}
+
+#texto {
+    margin-top: 1vh;
+    margin-bottom: 3vh;
+    font-size: 7vw;
+    font-weight: 200;
+    text-align: center;
+    text-shadow: 
+               -1px -1px 0px #000, 
+               -1px 1px 0px #000,                    
+                1px -1px 0px #000,                  
+                1px 0px 0px #000;
+}
+
+.containerButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 4vw;
+    font-family: 'Fredericka the Great';
+    font-weight: 200;
+    width: 20vw;
+    height: 12vh;
+    color: #fff;
+    border: 3px solid;
+    background-color: #1E1E1C;
+    border-radius: 65px;    
+    border-color: #fff;
+    box-shadow: 0 1.5vh 0 #171716;
+}
+
+.botao:hover {
+    background-color: #111110;
+}
+
+.botao:active {
+    position: relative;
+    top: 1.5vh;
+    box-shadow: none;
+}

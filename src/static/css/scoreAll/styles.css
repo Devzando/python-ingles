@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("../../imgs/fundo4.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+
+.containerText {
+    font-family: 'Fredericka the Great';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+#texto {
+    margin-bottom: 0;
+    font-size: 6vw;
+    font-weight: 200;
+    margin-top: 15vh;
+}
+
+#textoLista {
+    list-style-type: decimal;
+    font-size: 3vw;
+    font-weight: 200;
+}
+
+.containerButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao {
+    margin-bottom: -35vh;
+    margin-right: -78vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 3vw;
+    font-family: 'Fredericka the Great';
+    font-weight: 200;
+    width: 12vw;
+    height: 10vh;
+    color: #fff;
+    border: 3px solid;
+    background-color: #1E1E1C;
+    border-radius: 65px;    
+    border-color: #fff;
+    box-shadow: 0 1.5vh 0 #171716;
+}
+
+.botao:hover {
+    background-color: #111110;
+}
+
+.botao:active {
+    position: relative;
+    top: 1.5vh;
+    box-shadow: none;
+}

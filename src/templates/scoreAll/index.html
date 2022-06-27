@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/scoreAll/styles.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <title>English Challenge</title>
+</head>
+<body>
+        <div class="containerText">
+            <h1 id="texto">All Score</h1>
+            <ul>
+                {% for i in scoreAll: %}
+                    <li id="textoLista">{{i}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="containerButton">    
+            <a href="{{url_for('homePage')}}" class="botao">Home</a>
+        </div>
+</body>
+</html>
