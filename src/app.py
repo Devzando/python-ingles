@@ -60,6 +60,13 @@ def scoreAllScreen():
 
     return render_template('scoreAll/index.html', scoreAll = scoreAll)
 
+@app.route('/endGame')
+def endGameScreen():
+     score = scoreCalculate.scoreEndGame()
+     scoreCalculate.clearScore()
+     helpers.clearQuestion()
+
+     return render_template('endGame/index.html', score = score)
 
 if __name__ == '__main__':
     app.run(debug=True)

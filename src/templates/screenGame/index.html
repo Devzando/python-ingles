@@ -7,7 +7,7 @@
     <title>English Challenge</title>
 </head>
 <body>
-    <a class="botao" href="../home/index.html">X</a>
+    <a class="botao" href="{{url_for('endGameScreen')}}">X</a>
     <form action="/game/{{questionRandom}}" method="post" class="containerText">
         <h1 id="texto">Translate "{{question.palavra}}"</h1>
         <input id="input" type="text" name="traducao" placeholder="Digite a tradução da palavra entre aspas">
