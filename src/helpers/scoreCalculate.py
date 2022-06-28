@@ -18,14 +18,6 @@ def scoreEndGame():
                 score= score + int(x)
 
     uniqueScore.close()
-    scoreEnd = ''
-
-    if score < 10:
-        scoreEnd = '0'+str(score)
-        print('teste')
-        scoreAll.write(str(score) + '\n')
-        scoreAll.close()
-        return scoreEnd
 
     scoreAll.write(str(score) + '\n')
     scoreAll.close()
@@ -43,36 +35,37 @@ def clearScore():
 def scoreAll():
     scoreAllRead = open('models/scoreAll.txt', 'r')
 
-    valueScore = []
+    valueScoreList = []
+    valueScoreListFinal = []
+    valueScore = ''
 
     for i in scoreAllRead.readlines():
         for x in i:
-            if x != '\n':
-                valueScore = valueScore + [int(x)]
-
+            if x != '\n' and x != '':
+                valueScore = valueScore + x
+            if x == '\n':
+                valueScoreList = valueScoreList + [int(valueScore)]
+                valueScore = ''
+            
     scoreAllRead.close()
 
-    scoreAllWrite = open('models/scoreAll.txt', 'w')
-
     trocou = True
-    fim = len(valueScore) -1
+    fim = len(valueScoreList) -1
     while fim > 0 and trocou:
         trocou = False
         for i in range(fim):
-            if valueScore[i] < valueScore[i+1]:
+            if valueScoreList[i] < valueScoreList[i+1]:
                 trocou = True
-                temp = valueScore[i]
-                valueScore[i] = valueScore[i+1]
-                valueScore[i+1] = temp
+                temp = valueScoreList[i]
+                valueScoreList[i] = valueScoreList[i+1]
+                valueScoreList[i+1] = temp
         fim = fim -1
+
+    idx = 1
+    for i in valueScoreList:
+        if idx <= 5:
+            valueScoreListFinal = valueScoreListFinal + [i]
+        idx = idx + 1
         
-    scoreAllWrite.write('')
-    scoreAllWrite.close()
 
-    scoreAllAdd = open('models/scoreAll.txt', 'a')
-
-    for i in range(len(valueScore)):
-        scoreAllAdd.write(str(valueScore[i]) + '\n')
-    scoreAllAdd.close()
-
-    return valueScore
+    return valueScoreListFinal

@@ -11,7 +11,13 @@
             <h1 id="texto">All Score</h1>
             <ul>
                 {% for i in scoreAll: %}
-                    <li id="textoLista">{{i}}</li>
+                    <li id="textoLista">
+                        {% if 10 > i: %}
+                            0{{i}}
+                        {% else: %}
+                            {{i}}
+                        {% endif %}
+                    </li>
                 {% endfor %}
             </ul>
         </div>

@@ -8,8 +8,19 @@
 </head>
 <body>
         <div class="containerText">
-            <h1 id="textoResult">Congratulations! This is your result:</h1>
-            <h1 id="texto">Score<br>{{score}}</h1>
+            {% if noQuestion %}
+                <h1 id="textoResult">You answered everything correctly!</h1>
+            {% else %}
+                <h1 id="textoResult">Congratulations! This is your result:</h1>
+            {% endif %}
+            <h1 id="texto">
+                Score<br>
+                {% if 10 > score: %}
+                    0{{score}}
+                {% else: %}
+                    {{score}}
+                {% endif %}
+            </h1>
         </div>
 
         <div class="containerButton">    

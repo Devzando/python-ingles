@@ -27,5 +27,10 @@
     {
         "palavra": "Person",
         "traducao": "pessoa"
-    }
+    },
+
+    {
+        "palavra": "House",
+        "traducao": "casa"
+    } 
 ]
